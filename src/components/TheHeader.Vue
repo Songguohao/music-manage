@@ -1,13 +1,5 @@
 <template>
   <div class="header">
-    <!-- 折叠图片 -->
-    <div class="collapse-btn">
-      <Icon
-        type="ios-apps"
-        style="color: white"
-        @click.native="collapseChange"
-      />
-    </div>
     <div class="logo">music后台管理</div>
     <div class="header-right">
       <div class="btn-fullscreen" @click="handleFullScreen">
@@ -32,7 +24,6 @@
 </template>
 
 <script>
-import bus from '@/assets/js/bus'
 export default {
   name: 'TheHeader',
   data () {
@@ -51,10 +42,6 @@ export default {
   // 生命周期 - 挂载完成（访问DOM元素）
   mounted () {},
   methods: {
-    collapseChange () {
-      this.collapse = !this.collapse
-      bus.$emit('collapse', this.collapse)
-    },
     logout () {
       localStorage.removeItem('userName')
       this.$router.push('/')
@@ -99,6 +86,7 @@ export default {
   color: #fffff;
 }
 .header .logo {
+  left: 50px;
   position: relative;
   float: left;
   line-height: 70px;

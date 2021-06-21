@@ -91,7 +91,7 @@ export default {
   background-position: center;
   background-size: cover;
   width: 100%;
-  height: 1020px;
+  height: 100%;
 }
 
 .ms-title {

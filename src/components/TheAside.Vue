@@ -1,6 +1,7 @@
 <template>
   <div class="sidebar">
     <Sider
+      ref="side"
       class="sidebar-menu"
       width="150px"
       collapsible
@@ -59,6 +60,13 @@ export default {
   },
   // 生命周期 - 挂载完成（访问DOM元素）
   mounted () {},
+  watch: {
+    collapse: {
+      handler (newName, oldName) {
+        bus.$emit('collapse', this.collapse)
+      }
+    }
+  },
   computed: {
     // 默认打开的子菜单
     defaultItem () {
