@@ -6,6 +6,8 @@ import Home from '@/components/Home'
 import Consumer from '@/pages/ConsumerPage'
 import SongList from '@/pages/SongListPage'
 import Singer from '@/pages/SingerPage'
+import Song from '@/pages/SongPage'
+import ListSong from '@/pages/ListSong'
 
 const originalPush = Router.prototype.push
 Router.prototype.push = function push (location) {
@@ -46,6 +48,16 @@ export default new Router({
           path: '/songList',
           name: 'SongList',
           component: SongList
+        },
+        {
+          path: '/song',
+          name: 'Song',
+          component: Song
+        },
+        {
+          path: '/listSong',
+          name: 'ListSong',
+          component: ListSong
         }
       ]
     }
